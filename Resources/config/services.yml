@@ -1,0 +1,6 @@
+services:
+    rvalin.exception_listener_client.event_listener.exception:
+        class: RValin\ExceptionListenerClientBundle\EventListener\ExceptionListener
+        arguments: ['@router','@security.context', '%rvalin.exception_listener_client.endpoint%']
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
